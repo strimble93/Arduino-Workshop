@@ -14,8 +14,8 @@
 #define yellowBlinkTime 500 // 0.5 seconds for the yellow light blink
 
 bool trafficWest = true;    // west = true, east = false
-int flowTime = 10000;       // amount of time to let traffic flow
-int changeDelay = 2000;     // amount of time between colour changes
+int flowTime = 2000;       // amount of time to let traffic flow
+int changeDelay = 1000;     // amount of time between colour changes
 
 void setup()
 {
@@ -54,10 +54,10 @@ void loop()
       delay(flowTime);  // Delay for remaining traffic to pass
       for (int i = 0; i < 5; i++) // Blink yellow light
       {
+        delay(yellowBlinkTime);
         digitalWrite(westYellow, HIGH);
         delay(yellowBlinkTime);
         digitalWrite(westYellow, LOW);
-        delay(yellowBlinkTime);
       }
       digitalWrite(westRed, LOW); // Change west facing light red to green
       digitalWrite(westGreen, HIGH);
@@ -77,10 +77,10 @@ void loop()
       delay(flowTime);  // Delay for remaining traffic to pass
       for (int i = 0; i < 5; i++) // Blink yellow light
       {
+        delay(yellowBlinkTime);
         digitalWrite(eastYellow, HIGH);
         delay(yellowBlinkTime);
         digitalWrite(eastYellow, LOW);
-        delay(yellowBlinkTime);
       }
       digitalWrite(eastRed, LOW); // Change west facing light red to green
       digitalWrite(eastGreen, HIGH);

@@ -61,6 +61,7 @@ void loop()
       }
       digitalWrite(westRed, LOW); // Change west facing light red to green
       digitalWrite(westGreen, HIGH);
+      delay(flowTime);  // Delay for a minimum time after lights turn green.
     }
   }
 
@@ -84,6 +85,7 @@ void loop()
       }
       digitalWrite(eastRed, LOW); // Change west facing light red to green
       digitalWrite(eastGreen, HIGH);
+      delay(flowTime);  // Delay for a minimum time after lights turn green.
     }
   }
 }
